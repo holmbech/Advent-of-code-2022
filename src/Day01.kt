@@ -28,14 +28,10 @@ fun main() {
         }
 
         caloriesList.sort()
-
-        println("caloriesList = ${caloriesList.joinToString(", ")}")
-
         return caloriesList.removeLast() + caloriesList.removeLast() + caloriesList.removeLast()
     }
 
-    val input = readInput("Day01_test")
+    val input = readInput("Day01")
     println(part1(input))
     println(part2(input))
-
 }
