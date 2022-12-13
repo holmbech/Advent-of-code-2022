@@ -3,7 +3,7 @@ fun main() {
         var max = 0
         var temp = 0
         for (s in input) {
-            if(s.isEmpty()) {
+            if (s.isEmpty()) {
                 if (temp > max) {
                     max = temp
                 }
@@ -16,7 +16,22 @@ fun main() {
     }
 
     fun part2(input: List<String>): Int {
-        return input.size
+        var temp = 0
+        val caloriesList = ArrayList<Int>()
+        for (s in input) {
+            if (s.isNotEmpty()) {
+                temp += s.toInt()
+            } else {
+                caloriesList.add(temp)
+                temp = 0
+            }
+        }
+
+        caloriesList.sort()
+
+        println("caloriesList = ${caloriesList.joinToString(", ")}")
+
+        return caloriesList.removeLast() + caloriesList.removeLast() + caloriesList.removeLast()
     }
 
     val input = readInput("Day01_test")
